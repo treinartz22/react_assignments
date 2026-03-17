@@ -1,0 +1,23 @@
+/* ── Root container ─────────────────────────────────────────
+   Centers the entire app and caps its width on wide screens  */
+#root {
+  max-width: 1280px; /* stop the layout from stretching too wide */
+  margin: 0 auto; /* center the container horizontally */
+  padding: 2rem; /* breathing room on all sides */
+  text-align: center; /* center inline content like headings */
+}
+.simple-card {
+  border: 1px solid #646cff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}
