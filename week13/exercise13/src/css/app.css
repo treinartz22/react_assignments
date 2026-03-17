@@ -1,0 +1,93 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  background-color: #898991;
+}
+.navbar-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+.navbar a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #eeeef7;
+}
+.navbar a:hover {
+  color: #212121;
+}
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.5rem;
+  align-items: start;
+}
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #7777f4;
+  border-radius: 8px;
+  padding: 0.3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.book-card-header {
+  font-size: 1.1rem;
+  text-align: left;
+  padding-left: 0.65rem;
+  margin-bottom: 0.2rem;
+}
+.book-description {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  text-indent: 2em;
+  text-align: left;
+  color: aliceblue;
+  width: 100%;
+}
+.book-actions {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  /*flex-wrap: wrap;*/
+}
+.book-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  object-fit: contain;
+  align-self: center;
+}
+.more-books-hint {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.15rem;
+  color: #e0e7ff;
+  animation: fadeIn 0.8s ease-out both;
+  animation-delay: 0.15s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
