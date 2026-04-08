@@ -1,93 +1,129 @@
+/* =========================
+   ROOT CONTAINER
+   Why: Centers app and controls overall layout width
+   ========================= */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1280px; /* Prevents content from stretching too wide on large screens */
+  margin: 0 auto; /* Horizontally centers the entire app */
+  padding: 2rem; /* Adds breathing room around content */
+  text-align: center; /* Centers most text by default */
 }
-.navbar {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
-  padding: 0.5rem;
-  background-color: #898991;
-}
-.navbar-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-right: auto;
-}
-.navbar a {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #eeeef7;
-}
-.navbar a:hover {
-  color: #212121;
-}
+
+/* ── Book grid ──────────────────────────────────────────────
+   Responsive grid that automatically creates as many columns
+   as will fit, each at least 250px wide                      */
 .book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 0.5rem;
-  align-items: start;
+  display: grid; /* CSS grid layout */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* auto columns, min 250px, max equal share */
+  gap: 1rem; /* space between cards */
+  margin-top: 1rem; /* space above the grid */
+  align-items: start; /* each row sizes to its own content — expanding one card won't stretch its neighbors */
 }
+
+/* ── Book card ──────────────────────────────────────────────
+   Individual card container. Uses flexbox so inner content
+   stacks vertically and the action buttons can be pushed
+   to the bottom with margin-top: auto on .book-actions      */
 .book-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: #7777f4;
-  border-radius: 8px;
-  padding: 0.3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  display: flex; /* stack children vertically */
+  flex-direction: column; /* top to bottom: image → title → author → buttons */
+  justify-content: flex-start; /* content starts at the top */
+  border: 0.1rem solid #585050; /* red border */
+  padding: 0.8rem; /* inner spacing */
+  border-radius: 0.5rem; /* rounded corners */
+  width: 100%; /* fill the grid column */
+  min-height: 520px; /* baseline height so cards look consistent even with
+                              short content — unlike height: 100%, this does NOT
+                              force neighboring cards to match */
 }
+
+/* ── Card hover effect ──────────────────────────────────────
+   Subtle lift on hover to signal interactivity              */
 .book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* nudge the card upward */
 }
-.book-card-header {
-  font-size: 1.1rem;
-  text-align: left;
-  padding-left: 0.65rem;
-  margin-bottom: 0.2rem;
+/* =========================
+   ELEMENTS (BEM)
+   Why: Scoped styles prevent conflicts and improve readability
+   ========================= */
+
+/* Title of the book */
+.book-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font: Helvetica, Arial, sans-serif; /* Clean, modern font */
+  color: #f2d649; /* Highlight color */
 }
-.book-description {
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-  text-indent: 2em;
-  text-align: left;
-  color: aliceblue;
-  width: 100%;
-}
-.book-actions {
-  display: flex;
-  gap: 0.45rem;
-  margin-top: 0.5rem;
-  /*flex-wrap: wrap;*/
-}
-.book-image {
-  width: 100%;
-  height: 300px;
-  border-radius: 4px;
-  margin-top: 0.5rem;
-  object-fit: contain;
-  align-self: center;
-}
-.more-books-hint {
-  display: block;
+
+/* Author text */
+.book-card__author {
   font-size: 0.9rem;
-  margin-top: 0.15rem;
-  color: #e0e7ff;
-  animation: fadeIn 0.8s ease-out both;
-  animation-delay: 0.15s;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0; /* Softer contrast */
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+
+/* Book cover image */
+.book-card__image {
+  width: 100%; /* Makes image responsive */
+  height: auto;
+  object-fit: cover; /* fill the box, crop the edges */
+  object-position: top; /* keep the top of the image visible */
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Click feedback (small interaction detail) */
+.book-card__image:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+
+/* Description text */
+.book-card__description {
+  font-size: 0.9rem;
+  margin: 0.5rem 0; /* Vertical spacing */
+  line-height: 1.4; /* Improves readability */
+  text-align: left; /* Better for paragraphs */
+  text-indent: 2em; /* Optional first-line indent */
+}
+.book-card__button {
+  margin-top: auto; /* Pushes button to the bottom of the card */
+  padding: 0.3rem;
+  background-color: #4f38e8;
+  color: white;
+  border: #000000;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+/* Optional link (e.g., “Learn more”) */
+.book-card__link {
+  display: block;
+  margin: 0.5rem auto 0; /* Centers and spaces link */
+  color: #f2d649;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Hover state for link */
+.book-card__link:hover {
+  color: #535bf2;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   Why: Improve layout on smaller screens
+   ========================= */
+@media (max-width: 600px) {
+  .book-grid {
+    grid-template-columns: 1fr; /* Switch to single column */
+    gap: 0.5rem; /* Reduce spacing for small screens */
   }
-  to {
-    opacity: 1;
+
+  .book-card {
+    padding: 0.75rem; /* Slightly tighter layout */
   }
 }

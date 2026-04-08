@@ -1,39 +1,45 @@
-import { books } from "../data/bookData.js";
+// Import the BookCard component to render individual books
 import BookCard from "./BookCard.jsx";
 
+// Import the books data array
+import { books } from "../data/bookData.js";
+
+/* =========================
+   COMPONENT: BookList renders a list/grid of BookCard components
+   Props: - limit (optional): limits the number of books displayed
+   ========================= */
 function BookList({ limit }) {
-  const booksToShow = limit ? books.slice(0, limit) : books;
-  const totalBooks = books.length;
-  const shownBooks = booksToShow.length;
-  const hasMoreBooks = shownBooks < totalBooks;
+  /* =========================
+     DATA HANDLING Apply optional limit to the books array
+     ========================= */
+  const limitBooks = limit ? books.slice(0, limit) : books;
+  // - If 'limit' is provided, slice the first N books
+  // - Otherwise, use all books
 
   return (
+    /* =========================
+       GRID CONTAINER  Uses CSS Grid (.book-grid) to layout cards responsively
+       ========================= */
     <div className="book-grid">
-      <section className="book-card-header">
-        <p>
-          Showing {shownBooks} of {totalBooks} books
-        </p>
-
-        {hasMoreBooks && (
-          <span className="more-books-hint">
-            More books available on the Books page →
-          </span>
-        )}
-      </section>
-
-      {shownBooks === 0 && <p>There are still more books coming soon!</p>}
-
-      {booksToShow.map((book) => (
+      {/* =========================
+          RENDER BOOK CARDS
+          Map each book object to a BookCard component
+          - key: unique identifier for React list rendering
+          - Pass props for each book (title, author, image, link, description)
+          ========================= */}
+      {limitBooks.map((book) => (
         <BookCard
-          key={book.id}
-          author={book.author}
+          key={book.id} // Unique key for React reconciliation
           title={book.title}
-          description={book.description}
+          author={book.author}
           image={book.image}
+          link={book.link}
+          description={book.description}
         />
       ))}
     </div>
   );
 }
 
+// Export component for use in other parts of the app
 export default BookList;
