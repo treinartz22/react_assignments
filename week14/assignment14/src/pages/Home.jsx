@@ -1,10 +1,6 @@
 import BookList from "../components/BookList.jsx";
 
 function Home() {
-  return (
-    <div>
-      <BookList limit={2} />
-    </div>
-  );
+  return <BookList limit={4} />;
 }
 export default Home;

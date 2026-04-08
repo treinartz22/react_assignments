@@ -7,4 +7,5 @@ function BooksPage() {
     </div>
   );
 }
+
 export default BooksPage;
