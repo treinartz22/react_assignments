@@ -1,8 +1,8 @@
 function About() {
   return (
     <div>
-      <h1>About This App</h1>
-      <p>This app showcases a collection of books with their details.</p>
+      <h1>About Page</h1>
+      <p>This is the about page of our React application.</p>
     </div>
   );
 }
