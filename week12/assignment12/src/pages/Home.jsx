@@ -1,6 +1,6 @@
-import BookList from "../components/BookList.jsx";
+import ProjectList from "../components/ProjectList.jsx";
 
 function Home() {
-  return <BookList />;
+  return <ProjectList />;
 }
 export default Home;

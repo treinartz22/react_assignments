@@ -11,7 +11,7 @@
 /* GRID LAYOUT
    This creates a responsive grid that automatically adjusts the number of columns
    based on screen size, keeping each item at a reasonable width. */
-.book-grid {
+.project-grid {
   display: grid; /* Use CSS Grid layout */
   /* Create responsive columns:
      - auto-fill: fit as many columns as possible
@@ -23,7 +23,7 @@
 /* CARD DESIGN
    Each book is displayed as a card with padding, a border, and a shadow
    to visually separate it from other items. */
-.book-card {
+.project-card {
   border: 1px solid #ddd; /* Light gray border around each card */
   border-radius: 8px; /* Rounded corners */
   padding: 1rem; /* Space inside the card */
@@ -34,7 +34,7 @@
 
 /* IMAGE HANDLING
    Ensures images fit nicely inside the card and match the rounded style. */
-.book-card img {
+.project-card img {
   max-width: 100%; /* Make image responsive (never overflow its container) */
   border-radius: 4px; /* Slightly rounded corners for the image */
 }
