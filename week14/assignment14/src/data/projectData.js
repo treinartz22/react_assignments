@@ -1,0 +1,60 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Found Poems",
+    author: "T",
+    image: "gifs/week1.gif",
+    link: "https://example.com/",
+    description:
+      "Nouns, verbs, adjectives, and adverbs fall, bounce and arrange randomly.",
+  },
+  {
+    id: 2,
+    title: "Line to Points",
+    author: "T",
+    image: "gifs/week2.gif",
+    link: "https://example.com/walden",
+    description: "Lines drawn to points, then space is filled.",
+  },
+  {
+    id: 3,
+    title: "Avoid the Box",
+    author: "T",
+    image: "gifs/week3.gif",
+    link: "https://example.com/yellow-wallpaper",
+    description:
+      "Circles moving up and down avoid boxes moving left and right.",
+  },
+  {
+    id: 4,
+    title: "Amoeba Grid",
+    author: "T",
+    image: "gifs/week4.gif",
+    link: "https://example.com/amoeba-grid",
+    description: "A grid of amoeba-like shapes moving around the screen.",
+  },
+  {
+    id: 5,
+    title: "Two Pendulums",
+    author: "T",
+    image: "gifs/week5.gif",
+    link: "https://example.com/two-pendulums",
+    description: "Two pendulums swinging in different patterns.",
+  },
+  {
+    id: 6,
+    title: "Physics Grid",
+    author: "T",
+    image: "gifs/week6.gif",
+    link: "https://example.com/physics-grid",
+    description: "A grid of physics-based concepts in motion.",
+  },
+  {
+    id: 7,
+    title: "Red Tiles",
+    author: "T",
+    image: "gifs/week7.gif",
+    link: "https://example.com/red-tiles",
+    description: "A grid of red tiles moving in a rhythmic pattern.",
+  },
+];

@@ -13,7 +13,7 @@ function Navbar() {
       {/* Links — grouped on the right */}
       <div className="navbar__links">
         <Link to="/">Home</Link>
-        <Link to="/bookspage">All Projects</Link>
+        <Link to="/projectpage">All Projects</Link>
         <Link to="/about">About</Link>
       </div>
     </nav>

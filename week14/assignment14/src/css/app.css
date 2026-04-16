@@ -54,10 +54,10 @@
   color: #c4b5fd; /* lighter purple on hover */
 }
 
-/* ── Book grid ──────────────────────────────────────────────
+/* ── Project grid ──────────────────────────────────────────────
    Responsive grid that automatically creates as many columns
    as will fit, each at least 250px wide                      */
-.book-grid {
+.project-grid {
   display: grid; /* CSS grid layout */
   grid-template-columns: repeat(
     auto-fill,
@@ -68,11 +68,11 @@
   align-items: start; /* each row sizes to its own content — expanding one card won't stretch its neighbors */
 }
 
-/* ── Book card ──────────────────────────────────────────────
+/* ── Project card ──────────────────────────────────────────────
    Individual card container. Uses flexbox so inner content
    stacks vertically and the action buttons can be pushed
-   to the bottom with margin-top: auto on .book-actions      */
-.book-card {
+   to the bottom with margin-top: auto on .project-actions      */
+.project-card {
   display: flex; /* stack children vertically */
   flex-direction: column; /* top to bottom: image → title → author → buttons */
   justify-content: flex-start; /* content starts at the top */
@@ -87,7 +87,7 @@
 
 /* ── Card hover effect ──────────────────────────────────────
    Subtle lift on hover to signal interactivity              */
-.book-card:hover {
+.project-card:hover {
   transform: translateY(-3px); /* nudge the card upward */
 }
 /* =========================
@@ -95,8 +95,8 @@
    Why: Scoped styles prevent conflicts and improve readability
    ========================= */
 
-/* Title of the book */
-.book-card__title {
+/* Title of the project */
+.project-card__title {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0.5rem 0;
@@ -105,14 +105,14 @@
 }
 
 /* Author text */
-.book-card__author {
+.project-card__author {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   color: #e0e0e0; /* Softer contrast */
 }
 
-/* Book cover image */
-.book-card__image {
+/* Project cover image */
+.project-card__image {
   width: 100%; /* Makes image responsive */
   height: auto;
   object-fit: contain; /* fill the box, crop the edges */
@@ -122,19 +122,19 @@
 }
 
 /* Click feedback (small interaction detail) */
-.book-card__image:active {
+.project-card__image:active {
   transform: scale(0.98); /* Slight press effect */
 }
 
 /* Description text */
-.book-card__description {
+.project-card__description {
   font-size: 0.9rem;
   margin: 0.5rem 0; /* Vertical spacing */
   line-height: 1.4; /* Improves readability */
   text-align: left; /* Better for paragraphs */
   text-indent: 2em; /* Optional first-line indent */
 }
-.book-card__button {
+.project-card__button {
   margin-top: auto; /* Pushes button to the bottom of the card */
   padding: 0.3rem;
   background-color: #4f38e8;
@@ -145,7 +145,7 @@
   font-weight: 500;
 }
 /* Optional link (e.g., “Learn more”) */
-.book-card__link {
+.project-card__link {
   display: block;
   margin: 0.5rem auto 0; /* Centers and spaces link */
   color: #f2d649;
@@ -154,7 +154,7 @@
 }
 
 /* Hover state for link */
-.book-card__link:hover {
+.project-card__link:hover {
   color: #535bf2;
 }
 
@@ -163,12 +163,12 @@
    Why: Improve layout on smaller screens
    ========================= */
 @media (max-width: 600px) {
-  .book-grid {
+  .project-grid {
     grid-template-columns: 1fr; /* Switch to single column */
     gap: 0.5rem; /* Reduce spacing for small screens */
   }
 
-  .book-card {
+  .project-card {
     padding: 0.75rem; /* Slightly tighter layout */
   }
 }
