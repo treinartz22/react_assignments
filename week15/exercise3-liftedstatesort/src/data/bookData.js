@@ -1,0 +1,66 @@
+export const books = [
+  {
+    id: 1,
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    image: "books/book1.jpg",
+    link: "https://example.com/",
+    description:
+      "The Great Gatsby is a 1925 novel by F. Scott Fitzgerald chronicling Nick Carraway's interaction with mysterious millionaire Jay Gatsby and his obsession with Daisy Buchanan during the Jazz Age. Set on Long Island, the story explores themes of wealth, love, and the failure of the American Dream.",
+    rating: 7,
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Walden",
+    author: "Henry David Thoreau",
+    image: "books/book2.jpg",
+    link: "https://example.com/walden",
+    description: "A book about simple living in natural surroundings.",
+    rating: 6,
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Yellow Wallpaper",
+    author: "Charlotte Perkins Gilman",
+    image: "books/book3.jpg",
+    link: "https://example.com/yellow-wallpaper",
+    description: "A short story about a woman's descent into madness.",
+    rating: 3,
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Jane Eyre",
+    author: "Charlotte Brontë",
+    image: "books/book4.jpg",
+    link: "https://example.com/jane-eyre",
+    description:
+      "A novel about a young woman's struggle for independence and dignity.",
+    rating: 5,
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "Little Women",
+    author: "Louisa May Alcott",
+    image: "books/book5.jpg",
+    link: "https://example.com/little-women",
+    description:
+      "A coming-of-age novel about four sisters growing up during the Civil War.",
+    rating: 2,
+    featured: false,
+  },
+  {
+    id: 6,
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    image: "books/book6.jpg",
+    link: "https://example.com/pride-and-prejudice",
+    description:
+      "A romantic novel about the social dynamics of the gentry in Georgian England.",
+    rating: 4,
+    featured: false,
+  },
+];
