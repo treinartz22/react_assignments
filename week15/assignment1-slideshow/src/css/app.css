@@ -1,0 +1,193 @@
+/* =========================
+   ROOT CONTAINER
+   Why: Centers app and controls overall layout width
+   ========================= */
+#root {
+  max-width: 1280px; /* Prevents content from stretching too wide on large screens */
+  margin: 0 auto; /* Horizontally centers the entire app */
+  padding: 2rem; /* Adds breathing room around content */
+  text-align: center; /* Centers most text by default */
+}
+
+/* ── Project grid ──────────────────────────────────────────────
+   Responsive grid that automatically creates as many columns
+   as will fit, each at least 250px wide                      */
+.project-grid {
+  display: grid; /* CSS grid layout */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* auto columns, min 250px, max equal share */
+  gap: 1rem; /* space between cards */
+  margin-top: 1rem; /* space above the grid */
+  align-items: start; /* each row sizes to its own content — expanding one card won't stretch its neighbors */
+}
+
+/* ── Project card ──────────────────────────────────────────────
+   Individual card container. Uses flexbox so inner content
+   stacks vertically and the action buttons can be pushed
+   to the bottom with margin-top: auto on .project-actions      */
+.project-card {
+  display: flex; /* stack children vertically */
+  flex-direction: column; /* top to bottom: image → title → author → buttons */
+  justify-content: flex-start; /* content starts at the top */
+  border: 0.1rem solid #585050; /* red border */
+  padding: 0.8rem; /* inner spacing */
+  border-radius: 0.5rem; /* rounded corners */
+  width: 100%; /* fill the grid column */
+  min-height: 520px; /* baseline height so cards look consistent even with
+                              short content — unlike height: 100%, this does NOT
+                              force neighboring cards to match */
+}
+
+/* ── Card hover effect ──────────────────────────────────────
+   Subtle lift on hover to signal interactivity              */
+.project-card:hover {
+  transform: translateY(-3px); /* nudge the card upward */
+}
+/* =========================
+   ELEMENTS (BEM)
+   Why: Scoped styles prevent conflicts and improve readability
+   ========================= */
+
+/* Title of the book */
+.project-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font: Helvetica, Arial, sans-serif; /* Clean, modern font */
+  color: #f2d649; /* Highlight color */
+}
+
+/* Author text */
+.project-card__author {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0; /* Softer contrast */
+}
+
+/* Book cover image */
+.project-card__image {
+  width: 100%; /* Makes image responsive */
+  height: auto;
+  object-fit: cover; /* fill the box, crop the edges */
+  object-position: top; /* keep the top of the image visible */
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Click feedback (small interaction detail) */
+.project-card__image:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+
+/* Description text */
+.project-card__description {
+  font-size: 0.9rem;
+  margin: 0.5rem 0; /* Vertical spacing */
+  line-height: 1.4; /* Improves readability */
+  text-align: left; /* Better for paragraphs */
+  text-indent: 2em; /* Optional first-line indent */
+}
+.project-card__button {
+  margin-top: auto; /* Pushes button to the bottom of the card */
+  padding: 0.3rem;
+  background-color: #4f38e8;
+  color: white;
+  border: #000000;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+/* Optional link (e.g., “Learn more”) */
+.project-card__link {
+  display: block;
+  margin: 0.5rem auto 0; /* Centers and spaces link */
+  color: #f2d649;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Hover state for link */
+.project-card__link:hover {
+  color: #535bf2;
+}
+/* ── Navbar ─────────────────────────────────────────────────
+   Flex row with brand on the left, links on the right       */
+.navbar {
+  display: flex; /* lay brand and links in a row */
+  align-items: center; /* vertically center everything */
+  justify-content: space-between; /* brand left, links right */
+  background-color: rgb(96, 80, 244); /* purple background */
+  border-radius: 0.5rem; /* rounded corners */
+  padding: 0.5rem 1rem; /* inner spacing */
+  width: 100%; /* span the full container width */
+}
+
+/* ── Navbar brand ───────────────────────────────────────────
+   Emoji and title grouped together on the left              */
+.navbar__brand {
+  display: flex; /* put emoji and h4 side by side */
+  align-items: center; /* vertically center them */
+  gap: 0.5rem; /* space between emoji and title */
+  color: #f8f8f9; /* near-white text */
+}
+
+.navbar__brand h4 {
+  margin: 0; /* remove default h4 margin */
+  font-size: 1rem; /* keep it from being too large */
+}
+
+/* ── Navbar links ───────────────────────────────────────────
+   Links grouped together on the right                       */
+.navbar__links {
+  display: flex; /* lay links in a row */
+  gap: 1rem; /* space between links */
+  align-items: center; /* vertically center the links */
+}
+
+/* ── Link styles ────────────────────────────────────────────
+   Overrides the global <a> style inside the navbar          */
+.navbar a {
+  font-weight: 500; /* medium weight */
+  color: #f8f8f9; /* near-white text */
+  text-decoration: inherit; /* remove underline */
+}
+
+.navbar a:hover {
+  color: #c4b5fd; /* lighter purple on hover */
+}
+.slideshow {
+  text-align: center;
+}
+
+.slideshow__image {
+  margin-top: 2rem;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.slideshow__controls {
+  margin-top: 10px;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+/* =========================
+   RESPONSIVE DESIGN
+   Why: Improve layout on smaller screens
+   ========================= */
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* Switch to single column */
+    gap: 0.5rem; /* Reduce spacing for small screens */
+  }
+
+  .project-card {
+    padding: 0.75rem; /* Slightly tighter layout */
+  }
+}
