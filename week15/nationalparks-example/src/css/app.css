@@ -1,0 +1,94 @@
+/* ============================================
+   APP LAYOUT & ROOT STYLES
+   ============================================ */
+
+#root {
+  max-width: 1280px; /* Prevents overly wide layout */
+  margin: 0 auto; /* Centers app */
+  padding: 2rem; /* Outer spacing */
+  text-align: center;
+  color: rgb(166, 173, 242);
+}
+
+/* ============================================
+   PARK GRID CONTAINER
+   ============================================ */
+
+.park-list {
+  display: flex; /* Horizontal layout */
+  flex-wrap: wrap; /* Wrap cards to next line */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center grid */
+}
+
+/* ============================================
+   PARK CARD
+   ============================================ */
+
+.park-card {
+  width: 250px;
+  padding: 15px;
+  background: rgb(126, 142, 44);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: left; /* Override root center alignment */
+  color: #fff; /* Fixed invalid CSS (removed quotes) */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ============================================
+   IMAGE
+   ============================================ */
+
+.park-image {
+  width: 100%; /* Fill card width */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* ============================================
+   PARK INFO SECTION (NEW WRAPPER)
+   ============================================ */
+
+.park-card__info {
+  margin-bottom: 10px;
+}
+
+.park-card__name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.park-card__state,
+.park-card__hikes {
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+/* Featured badge */
+.park-card__featured {
+  color: gold;
+  font-weight: bold;
+}
+
+/* ============================================
+   DETAILS SECTION (TOGGLED)
+   ============================================ */
+
+.park-card__details {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+button {
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
